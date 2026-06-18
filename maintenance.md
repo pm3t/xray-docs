@@ -1,0 +1,36 @@
+# Pemeliharaan & Pembaruan Sistem
+
+## Cara Menjalankan Server
+
+```bash
+node server.mjs
+```
+
+Buka browser dan akses: **`http://localhost:3000`**
+
+## Cara Melakukan Pembaruan (Update)
+
+1. Sambungkan **USB Drive** yang berisi folder pembaruan ke workstation
+2. Tutup **semua browser** yang sedang membuka aplikasi
+3. Buka USB Drive, masuk ke folder `Dist/`
+4. Salin (copy) **seluruh isi** folder `Dist/`
+5. Buka direktori aplikasi di workstation: `C:\XRay`
+6. Tempel (paste) dan pilih **Replace All** jika ada konfirmasi file duplikat
+7. Jalankan kembali server: `node server.mjs`
+
+> **Penting:** **Jangan hapus** file `xray.db` dan folder `uploads/` saat melakukan update. Kedua file tersebut berisi seluruh data dan gambar yang sudah tersimpan.
+
+## Pembersihan Database (Opsional)
+
+Jika sistem terasa lambat atau ada korupsi data lokal:
+1. Hentikan server (`Ctrl+C` di terminal)
+2. Hapus file `xray.db`
+3. Jalankan kembali server — database baru akan dibuat otomatis
+4. **Catatan:** Riwayat scan dan data kargo akan hilang. File gambar di `uploads/` aman.
+
+## Port Sudah Digunakan
+
+Jika port 3000 sudah digunakan:
+```bash
+PORT=3001 node server.mjs
+```

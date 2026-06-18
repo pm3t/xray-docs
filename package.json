@@ -1,0 +1,26 @@
+{
+  "name": "xray-docs",
+  "version": "1.0.0",
+  "description": "Selamat datang di panduan pengguna **X-Ray Offline System**.",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pm3t/xray-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pm3t/xray-docs/issues"
+  },
+  "homepage": "https://github.com/pm3t/xray-docs#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

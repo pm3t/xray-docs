@@ -1,38 +1,58 @@
 # Riwayat Scan (Repository)
 
-Seluruh riwayat pemeriksaan kargo disimpan dalam modul **Scan History** dan dapat diakses kapan saja.
+Halaman ini menyimpan seluruh riwayat pemeriksaan X-Ray yang pernah dilakukan.
 
-## Dashboard Statistik
-Di bagian atas halaman terdapat empat kartu ringkasan:
-* **Total Scans:** Total seluruh pemeriksaan yang tercatat.
-* **Total Finished XRay:** Jumlah kargo yang dinyatakan selesai diperiksa.
-* **Total Pending XRay:** Jumlah kargo yang tertahan.
-* **Submit ke CEISA:** Jumlah data yang sudah dikirim *(Future Development)*.
+## Filter & Pencarian
 
-## Melihat Riwayat
-1. Buka menu **Scan History**.
-2. Daftar hasil scan ditampilkan dengan status badge:
-    * 🟢 **Finished XRay**
-    * 🔴 **Pending XRay**
-3. Gunakan kotak pencarian untuk mencari berdasarkan MAWB atau HAWB.
-4. Gunakan dropdown filter untuk memfilter berdasarkan status.
+| Filter | Deskripsi |
+|---|---|
+| **MAWB** | Cari berdasarkan Master Air Waybill |
+| **HAWB** | Cari berdasarkan House Air Waybill |
+| **Screener** | Cari berdasarkan nama operator |
+| **Tanggal Awal** | Filter dari tanggal tertentu |
+| **Tanggal Akhir** | Filter hingga tanggal tertentu |
+| **Status** | Semua / Finished XRay / Pending XRay |
+
+## Statistik Cards
+
+| Kartu | Deskripsi |
+|---|---|
+| **Total Scans** | Total seluruh scan yang pernah dilakukan |
+| **Finished XRay** | Jumlah kargo yang dinyatakan lolos |
+| **Pending XRay** | Jumlah kargo yang ditunda |
+| **Submitted Customs** | Jumlah yang sudah dikirim ke bea cukai |
+
+## Aksi pada Data Scan
+
+| Tombol | Fungsi |
+|---|---|
+| **👁 Lihat Snapshot** | Lihat seluruh gambar (Top View, Side View, Foto Barang, hasil crop AI) dalam modal dengan zoom |
+| **✏ Edit** | Edit data scan (memerlukan konfirmasi password) |
+| **🔄 Re-Scan** | Kembali ke halaman Screening dengan data MAWB/HAWB terisi |
+| **📤 Submit Customs** | Kirim data ke bea cukai (CEISA) — mencatat timestamp submission |
+| **🗑 Hapus** | Hapus riwayat scan (memerlukan konfirmasi password) |
 
 ## Detail Snapshot
-1. Klik ikon **Mata (Eye)** pada baris data untuk melihat snapshot lengkap.
+
+1. Klik ikon **Mata (Eye)** pada baris data untuk melihat snapshot lengkap
 2. Modal akan menampilkan:
-    * **Top View X-Ray** — gambar dari atas.
-    * **Side View X-Ray** — gambar dari samping.
-    * **Foto Barang** — foto fisik (jika diunggah).
-3. Klik pada gambar untuk memperbesar tampilan (Zoom in/out).
+   - **Top View X-Ray** — gambar dari atas
+   - **Side View X-Ray** — gambar dari samping
+   - **Foto Barang** — foto fisik (jika diunggah)
+   - **Hasil Crop AI** — semua crop koli terdeteksi
+3. Klik pada gambar untuk memperbesar tampilan (Zoom in/out)
 
-> Gambar ditampilkan langsung dari folder `uploads/` pada server. Gambar disimpan dalam format **PNG lossless** (tidak terkompresi).
+> Gambar ditampilkan langsung dari folder `uploads/` pada server dalam format **PNG lossless**.
 
-## Pengulangan Scan (Redo)
-Klik ikon **Rotate (↺)** untuk mengulangi proses screening item tersebut. Data scan lama akan tetap tersimpan di riwayat sebagai referensi.
+## Export Excel
 
-## Menghapus Riwayat
-* **Hapus satu:** Klik ikon tempat sampah di baris yang diinginkan.
-* **Hapus massal:** Centang beberapa baris, lalu klik tombol **Hapus Terpilih** yang muncul.
+Ekspor data ke Excel dengan embedded gambar crop di dalam sel. File Excel memiliki:
+- Header dengan styling profesional
+- Warna baris selang-seling
+- Gambar crop koli tertanam dalam sel
 
-## Sinkronisasi ke Bea Cukai (CEISA)
-Status: **Future Development**.
+## Verifikasi Cargo
+
+Tabel menampilkan badge verifikasi:
+- ✅ **Hijau** — Kargo cocok dengan data manifest
+- ❌ **Merah** — Kargo tidak ditemukan di data manifest
