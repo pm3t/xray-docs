@@ -4,6 +4,8 @@ Halaman **Data Cargo** adalah halaman utama setelah login. Digunakan untuk menge
 
 ## Ringkasan Dashboard
 
+<img src="/images/dashboard-cargo.png" alt="dashboard" width="800">
+
 Empat kartu ringkasan menampilkan statistik:
 
 | Kartu | Deskripsi |
@@ -15,24 +17,27 @@ Empat kartu ringkasan menampilkan statistik:
 
 ## Menambah Data Cargo
 
-1. Klik tombol **+ Tambah Data** (di atas tabel)
-2. Isi data pada form yang muncul:
+1. Klik tombol <img src="/images/tombol-add-new.png" width="100">
+2. Isi data pada form berikut:
+
+<img src="/images/add-new-cargo.png" width="500">
+
    - **ULD No** — Nomor Unit Load Device
    - **MAWB** (wajib) — Master Air Waybill
    - **HAWB** — House Air Waybill
    - **Tot Pcs** — Jumlah piece yang dideklarasikan
    - **Tot Weight** — Berat total (kg)
    - **Goods Desc** — Deskripsi barang
-3. Klik **Simpan**
+3. Klik **Save Cargo**
 
 ## Mengedit Data Cargo
 
-Klik ikon **Edit (pensil)** pada baris cargo yang ingin diubah. Konfirmasi dengan password untuk menyimpan perubahan.
+Klik ikon **Edit** <img src="/images/tombol-edit.png" width="50"> pada baris cargo yang ingin diubah. Konfirmasi dengan password untuk menyimpan perubahan.
 
 ## Menghapus Data Cargo
 
-- **Hapus satu:** Klik ikon **Hapus (trash)** pada baris cargo
-- **Hapus massal:** Centang beberapa baris, lalu klik **Hapus Massal**
+- **Hapus satu:** Klik ikon **Hapus (trash)** <img src="/images/tombol-hapus.png" width="50"> pada baris cargo
+- **Hapus massal:** Centang beberapa baris, lalu klik **Delete Selected** <img src="/images/tombol-hapus-masal.png" width="200"> 
 - Semua penghapusan memerlukan konfirmasi password
 
 ## Import Data dari Excel
@@ -51,11 +56,11 @@ Klik ikon **Edit (pensil)** pada baris cargo yang ingin diubah. Konfirmasi denga
 
 3. Data akan langsung ditambahkan ke tabel
 
-Template import tersedia di folder `templates/Excel Template v2.xls`.
+Template import tersedia <a href="template/Excel Template v2.xls">di tautan ini</a>.
 
 ## Export ke Excel
 
-Klik tombol **Export Excel** untuk mengunduh data cargo yang sedang difilter ke file `.xlsx` dengan format profesional (header biru, warna baris selang-seling, conditional formatting untuk status scan).
+Klik tombol **Export Excel** <img src="/images/tombol-export-xls.png" width="150"> untuk mengunduh data cargo yang sedang difilter ke file `.xlsx` .
 
 ## Pencarian & Filter
 
@@ -71,12 +76,8 @@ Klik tombol **Kolom** untuk menampilkan/menyembunyikan kolom tertentu (ULD No, T
 
 | Tombol | Fungsi |
 |---|---|
-| **Send to CEISA** | Menandai kargo sebagai sudah dikirim ke sistem bea cukai |
-| **Sync API** | Sinkronisasi data dari API eksternal (simulasi) |
-| **Remove Duplicates** | Hapus data duplikat berdasarkan kombinasi MAWB + HAWB |
-| **Remove Blank** | Hapus data yang MAWB dan HAWB-nya kosong |
-| **Print Label** | Cetak label IATA cargo dengan barcode |
+| **Send to CEISA** <img src="/images/tombol-hapus-masal.png" width="150"> |  Kirim ke sistem bea cukai |
+| **Sync API** <img src="/images/tombol-synch-api.png" width="150">| Sinkronisasi data dari API eksternal, misal: Cargowise, Existing warehouse system, dst|
+| **Remove Duplicates** <img src="/images/tombol-remove-duplicate.png" width="150">| Hapus data duplikat berdasarkan kombinasi MAWB + HAWB |
+| **Remove Blank** <img src="/images/tombol-remove-blank.png" width="150">| Hapus data yang MAWB dan HAWB-nya kosong |
 
-## Cetak Label Kargo
-
-Klik tombol **Print Label** pada baris cargo. Akan muncul tampilan cetak dengan barcode yang berisi nomor-nomor referensi kargo.

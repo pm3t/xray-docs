@@ -47,10 +47,6 @@ export default defineConfig({
       },
     ],
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/pm3t/xray-docs' },
-    ],
-
     footer: {
       message: 'Technohub X-Ray Solution v2.4',
       copyright: 'Hak Cipta © 2026 Technohub',

@@ -1,6 +1,9 @@
 # Login
 
 1. Buka browser dan akses `http://localhost:3000`
+
+<img src="/images/login.png" alt="Layar Login" width="300">
+
 2. Masukkan **Email Address** (contoh: `admin@technohub.co.id`)
 3. Masukkan **Password**
 4. Klik tombol **Sign In**

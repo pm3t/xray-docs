@@ -1,1 +1,0 @@
-import{_ as o,o as t,c as n,a2 as e}from"./chunks/framework.DnrXFDHb.js";const _=JSON.parse('{"title":"Login","description":"","frontmatter":{},"headers":[],"relativePath":"login.md","filePath":"login.md"}'),i={name:"login.md"};function s(r,a,l,d,c,g){return t(),n("div",null,[...a[0]||(a[0]=[e("",3)])])}const m=o(i,[["render",s]]);export{_ as __pageData,m as default};

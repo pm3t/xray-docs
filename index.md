@@ -3,35 +3,34 @@ layout: home
 
 hero:
   name: X-Ray Offline System
-  text: Technohub X-Ray Solution v2.4
-  tagline: Sistem pemeriksaan kargo berbasis web dengan dukungan AI, penyimpanan lokal, dan integrasi multi-workstation.
+  text: User Manual
   actions:
     - theme: brand
-      text: Mulai Gunakan
+      text: Persyaratan & Instalasi
       link: /getting-started
     - theme: alt
-      text: Panduan Fitur
+      text: Panduan
       link: /guide/input-data
 
 features:
   - icon: 📦
     title: Manajemen Manifest
-    details: "Kelola data kargo melalui input manual atau impor massal via Excel. Dukungan MAWB, HAWB, ULD, dan tracking status scan."
+    details: "Kelola data manifest kargo melalui input manual atau import Excel. Hal ini bertujuan untuk memberikan kontrol kepada pengguna mana cargo yang telah complete scan, sebagian, atau belum sama sekali"
   - icon: 🎥
     title: Screening Real-time
-    details: "Pengambilan gambar otomatis dari kamera Top View dan Side View dengan dukungan AI untuk deteksi koli."
+    details: "Mirroring screen Top View dan Side View dari sistem XRay."
   - icon: 🗄️
     title: Repository Lokal
-    details: "Seluruh data kargo, riwayat scan, dan gambar tersimpan di SQLite dan folder server — offline first."
+    details: "Seluruh data kargo, riwayat scan, dan gambar tersimpan di SQLite dan folder local workstation."
   - icon: 🤖
-    title: Deteksi AI
-    details: "Tiga metode deteksi koli: OpenCV (server-side), MediaPipe (client-side), atau Manual cropping."
+    title: Auto Crop & Manual Crop
+    details: "Pilihan penggunaan AI dalam Cropping area Cargo: OpenCV (server-side), MediaPipe (client-side), atau Manual cropping."
   - icon: 📊
     title: Customs Dashboard
-    details: "Monitoring real-time untuk petugas bea cukai dengan metrik, panel detail, dan auto-refresh."
+    details: "Monitoring real-time untuk petugas bea cukai dengan metrik dan panel detail"
   - icon: 🔄
-    title: Multi-Workstation
-    details: "Sinkronisasi data antar Workstation, Hub, dan Cloud dengan dukungan PostgreSQL."
+    title: Konsolidasi Laporan
+    details: "Sinkronisasi data antar Workstation ke Central Hub, dan ke Cloud"
 ---
 
 ## Fitur Utama
@@ -48,7 +47,7 @@ features:
 
 | Peran | Deskripsi |
 |---|---|
-| **Workstation** | Stasiun kerja pemeriksaan X-Ray individual. Input data screening dan scanning. |
+| **Workstation** | Input data screening dan scanning, melekat pada sistem XRay. |
 | **Hub** | Server pusat yang mengkonsolidasi data dari beberapa Workstation. |
 | **Cloud** | Server tingkat atas untuk agregasi data antar Hub dan pelaporan terpusat. |
 
