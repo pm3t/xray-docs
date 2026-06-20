@@ -29,6 +29,14 @@ jobs:
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
 
+      - name: Set package visibility to public
+        run: |
+          curl -s -X PATCH \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/user/packages/container/xray-docs/visibility \
+            -d '{"visibility":"public"}'
+
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.2.2
         with:
