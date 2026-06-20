@@ -1,0 +1,7 @@
+services:
+  xray-docs:
+    image: ghcr.io/pm3t/xray-docs:latest
+    container_name: xray-docs
+    ports:
+      - "8080:80"
+    restart: unless-stopped
