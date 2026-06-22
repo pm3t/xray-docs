@@ -46,10 +46,10 @@ jobs:
           port: ${{ secrets.SSH_PORT || 22 }}
           script: |
             docker pull ghcr.io/${{ github.repository }}:latest
-            docker stop xray-docs || true
-            docker rm xray-docs || true
+            docker stop xray-manual || true
+            docker rm xray-manual || true
             docker run -d \
-              --name xray-docs \
+              --name xray-manual \
               --restart unless-stopped \
               -p 8080:80 \
               ghcr.io/${{ github.repository }}:latest
