@@ -13,17 +13,17 @@ Halaman ini adalah inti dari aplikasi — tempat operator melakukan pemeriksaan 
 
 ## Input Data Screening
 
-**Cara 1 — Manual:**
-1. Ketik **MAWB** dan **HAWB** pada field input di bawah video
+**Cara 1 — Barcode Scanner:**
+1. Scan Barcode **MAWB** dan **HAWB**, dengan posisi cursor menyesuaikan isian.
 2. Sistem akan otomatis mencocokkan dengan data cargo (jika ada) dan mengisi HAWB
 
-**Cara 2 — Scanner OCR Otomatis:**
-- Jika terintegrasi dengan kamera fixed/scanner, data MAWB/HAWB akan terisi otomatis melalui koneksi SSE (Server-Sent Events)
+**Cara 2 — Scanner OCR :**
+- Jika terintegrasi dengan kamera fixed/scanner, data MAWB/HAWB akan terisi otomatis
 - Status koneksi ditunjukkan oleh ikon **WiFi** (hijau = terhubung, merah = terputus)
 
-**Cara 3 — Auto Screening (Antrian):**
-- Aktifkan fitur **Auto Screening** di Pengaturan
-- Data dari scanner akan masuk antrian dan diproses otomatis dengan delay yang dapat diatur
+**Cara 3 — Link pada Data Cargo:**
+- Masuk ke Halaman Data Cargo > Pilih dokumen yang akan discan
+- Klik Link MAWB. Layar akan diteruskan ke layar Screening dengan MAWB & HAWB terkait
 
 ## Ambil Foto Barang
 
@@ -41,20 +41,25 @@ Aplikasi mendukung tiga metode deteksi koli:
 | **MediaPipe** | Client-side EfficientDet via WASM | Cepat, offline, tanpa server |
 | **Manual** | Drag & crop interaktif dengan mouse | Kontrol penuh oleh operator |
 
-**Langkah-langkah:**
+## Kalibrasi Background (BGS)
+
+Proses Kalibrasi perlu dilakukan 1x saja saat instalasi XRay, yang berguna bagi AI untuk mengecualikan layar kosong, langkah-langkahnya adalah sbb:
+1. Pastikan tidak ada kargo di frame kamera (konveyor kosong)
+   <img src="/images/layar-baseline.png" width="400">
+2. Klik tombol  <img src="/images/tombol-kalibrasi.png" width="150">
+3. Sistem akan menyimpan baseline gambar (maksimal 2)
+4. Baselines disimpan di localStorage browser
+
+
+**Langkah-langkah Deteksi dengan AI**
 1. Pastikan kamera Top View menampilkan kargo
-2. Tekan tombol **AI Analyze** — sistem akan mendeteksi koli secara otomatis
+<img src="/images/layar-kargo.png" width="400">
+
+2. Tekan tombol  <img src="/images/tombol-ai.png" width="150">— sistem akan mendeteksi koli secara otomatis
 3. Bounding box hijau akan muncul mengelilingi setiap koli yang terdeteksi
 4. Hasil crop koli akan muncul di panel **Hasil Crop Koli**
 5. Jumlah koli terdeteksi otomatis mengisi field Qty
 
-## Kalibrasi Background (BGS)
-
-Untuk hasil deteksi yang lebih akurat dengan metode BGS:
-1. Pastikan tidak ada kargo di frame kamera (konveyor kosong)
-2. Klik tombol **Calibrate Background** (ikon kamera)
-3. Sistem akan menyimpan baseline gambar (maksimal 2)
-4. Baselines disimpan di localStorage browser
 
 ## Crop Manual
 
@@ -81,10 +86,12 @@ Setelah memutuskan:
 
 ## Panel Hasil Crop
 
+<img src="/images/layar-koli.png" width="400">
+
 Panel ini menampilkan semua hasil crop koli dari deteksi AI atau cropping manual. Setiap crop menampilkan:
 - Gambar hasil crop
 - Nomor urut koli
-- Tombol **X** untuk menghapus crop tertentu
+- Tombol <img src="/images/tombol-hapus-koli.png" width="50"> untuk menghapus crop tertentu
 
 ## Riwayat Scan Terbaru
 

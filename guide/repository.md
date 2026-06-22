@@ -4,6 +4,8 @@ Halaman ini menyimpan seluruh riwayat pemeriksaan X-Ray yang pernah dilakukan.
 
 ## Filter & Pencarian
 
+<img src="/images/scanhistory-filter.png" width="800">
+
 | Filter | Deskripsi |
 |---|---|
 | **MAWB** | Cari berdasarkan Master Air Waybill |
@@ -14,6 +16,7 @@ Halaman ini menyimpan seluruh riwayat pemeriksaan X-Ray yang pernah dilakukan.
 | **Status** | Semua / Finished XRay / Pending XRay |
 
 ## Statistik Cards
+<img src="/images/scanhistory-statistik.png" width="800">
 
 | Kartu | Deskripsi |
 |---|---|
